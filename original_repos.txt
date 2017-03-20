@@ -1,0 +1,3 @@
+https://github.com/udacity/CarND-Mercedes-SF-Utilities/tree/master/python
+
+https://github.com/udacity/CarND-Extended-Kalman-Filter-Project
