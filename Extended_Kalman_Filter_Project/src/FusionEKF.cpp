@@ -38,6 +38,12 @@ FusionEKF::FusionEKF() {
   */
 
 
+  // process covariance matrix
+  Q_ = ;
+
+  // measurement covariance matrix
+  R_ = ;
+
 }
 
 /**
@@ -67,11 +73,13 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       /**
       Convert radar from polar to cartesian coordinates and initialize state.
       */
+      ekf_.x_ =
     }
     else if (measurement_pack.sensor_type_ == MeasurementPackage::LASER) {
       /**
       Initialize state.
       */
+      ekf_.x_ =
     }
 
     // done initializing, no need to predict or update
@@ -105,8 +113,15 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
   if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
     // Radar updates
+    // For radar updates
+    // In the radar update step, the Jacobian matrix Hj is used to calculate S, K and P.
+    // To calculate y, we use the equations that map the predicted location x' from
+    // Cartesian coordinates to polar coordinates h(x')
+    ekf_.UpdateEKF();
+
   } else {
     // Laser updates
+      ekf_.Update();
   }
 
   // print the output
