@@ -1,4 +1,6 @@
 #include "kalman_filter.h"
+#include <iostream>
+#include "tools.h"
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -55,20 +57,21 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 
     //check division by zero
     if(fabs(c1) < 0.0001){
-        cout << "UpdateEKF () - Error - Division by Zero" << endl;
+        std::cout << "UpdateEKF () - Error - Division by Zero" << std::endl;
         return;
     }
 
     //compute h(x') function
     h_x << sqrt(c1),
-           atan2(py/px),
+           atan2(py,px),
            (px*vx + py*vy)/c1;
 
 
     VectorXd y = z - h_x;
 
     // Update the Jacobian Matrix Hj
-    H_ = Tools::CalculateJacobian(x_);
+    Tools tool;
+    H_ = tool.CalculateJacobian(x_);
 
     MatrixXd Ht = H_.transpose();
     MatrixXd S = H_ * P_ * Ht + R_;
