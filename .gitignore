@@ -1,4 +1,8 @@
 build*
 *.pro.user
-other_resources/*
+other_resources*
+kalman_tracker_linux*
+kalman-tracker*
+EKF_QtProject*
+output*
 *~

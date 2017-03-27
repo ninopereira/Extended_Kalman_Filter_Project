@@ -49,17 +49,16 @@ void check_files(ifstream& in_file, string& in_name,
   }
 }
 
-//int main(int argc, char* argv[]) {
-int main() {
-//  check_arguments(argc, argv);
+int main(int argc, char* argv[]) {
 
+  check_arguments(argc, argv);
 
-//  string in_file_name_ = argv[1];
-  string in_file_name_ = "/home/npereira/Udacity_Self_Driving_Cars/Term2/Extended_Kalman_Filter_Project/build-EKF_QtProject-gcc-Debug/data/sample-laser-radar-measurement-data-1.txt";
+  string in_file_name_ = argv[1];
+//  string in_file_name_ = "/home/npereira/Udacity_Self_Driving_Cars/Term2/Extended_Kalman_Filter_Project/Extended_Kalman_Filter_Project/data/sample-laser-radar-measurement-data-1.txt";
   ifstream in_file_(in_file_name_.c_str(), ifstream::in);
 
-//  string out_file_name_ = argv[2];
-  string out_file_name_ = "/home/npereira/Udacity_Self_Driving_Cars/Term2/Extended_Kalman_Filter_Project/build-EKF_QtProject-gcc-Debug/output/results.txt";
+  string out_file_name_ = argv[2];
+//  string out_file_name_ = "/home/npereira/Udacity_Self_Driving_Cars/Term2/Extended_Kalman_Filter_Project/Extended_Kalman_Filter_Project/output/results.txt";
   ofstream out_file_(out_file_name_.c_str(), ofstream::out);
 
   check_files(in_file_, in_file_name_, out_file_, out_file_name_);
