@@ -173,8 +173,4 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     ekf_.H_ = H_laser_; // we need to revert the H_ matrix to the original for the laser
     ekf_.Update(measurement_pack.raw_measurements_);
   }
-
-  // print the output
-  std::cout << "x_ = " << ekf_.x_ << std::endl;
-  std::cout << "P_ = " << ekf_.P_ << std::endl;
 }
