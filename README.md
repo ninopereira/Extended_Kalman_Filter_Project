@@ -8,6 +8,28 @@ There are 4 applications in this repository:
 
 The Extended_Kalman_Filter_Project implements a full EKF using both Laser and Radar data.
 
+# Results screenshot:
+
+![alt tag](Extended_Kalman_Filter_Project/results_screenshot.png)
+
+npereira@UKMRDD-42925:~/Udacity_Self_Driving_Cars/Term2/Extended_Kalman_Filter_Project/Extended_Kalman_Filter_Project/build$ ./ExtendedKF ../data/sample-laser-radar-measurement-data-1.txt ../output/results1.txt
+EKF: 
+Accuracy - RMSE:
+0.0651649
+0.0605378
+  0.54319
+ 0.544191
+npereira@UKMRDD-42925:~/Udacity_Self_Driving_Cars/Term2/Extended_Kalman_Filter_Project/Extended_Kalman_Filter_Project/build$ ./ExtendedKF ../data/sample-laser-radar-measurement-data-2.txt ../output/results2.txt
+EKF: 
+UpdateEKF () - Error - Division by Zero
+Division by zero ERROR!
+Accuracy - RMSE:
+0.185801
+0.190292
+ 0.47465
+0.805025
+
+
 # Dependencies:
 cmake >= 3.5
 
